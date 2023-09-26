@@ -15,8 +15,15 @@ app.set('view engine', 'ejs')
 
 // 4
 app.get('/', (req, res) => {
-    res.end('<h1>Hello World</h1>')
+    res.render('purchase')
 })
+
+app.post('/create-item', (req, res) => {
+    console.log(req.body)
+    res.json({test: 'success'})
+}
+
+)
 
 const server = http.createServer(app);
 let PORT = 3001
